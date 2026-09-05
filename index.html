@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Natalia Koroleva — IT Project Manager in Helsinki. Fintech delivery, change management, and the bridge between business and engineering.">
+  <meta name="color-scheme" content="light">
+  <title>Natalia Koroleva — IT Project Manager</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Natalia Koroleva — IT Project Manager">
+  <meta property="og:description" content="Fintech delivery PM in Helsinki. Change management and the bridge between business and engineering.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --paper:#F4EFE6;
+      --ink:#1C1916;
+      --accent:#B4235A;
+      --line:#E0D8CC;
+      --ink-soft:#6A635A;
+      --surface:#FBF8F2;
+
+      --step-0:clamp(.82rem,.8rem + .1vw,.9rem);
+      --step-1:clamp(1rem,.96rem + .2vw,1.1rem);
+      --step-2:clamp(1.2rem,1.1rem + .5vw,1.4rem);
+      --step-3:clamp(1.5rem,1.3rem + 1vw,2rem);
+      --step-4:clamp(2rem,1.6rem + 2vw,3rem);
+      --step-5:clamp(2.6rem,1.9rem + 3.4vw,4.6rem);
+
+      --sp-1:8px; --sp-2:16px; --sp-3:24px; --sp-4:40px;
+      --sp-5:64px; --sp-6:96px; --sp-7:140px;
+      --maxw:1120px;
+      --radius:4px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:"Figtree",system-ui,-apple-system,sans-serif;
+      font-size:var(--step-1);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:600;line-height:1.05;margin:0}
+    p{margin:0}
+    a{color:inherit}
+    img{max-width:100%;display:block}
+    picture{display:contents}
+    ul,ol{margin:0;padding:0;list-style:none}
+
+    .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--sp-3)}
+
+    /* skip link */
+    .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:100;border-radius:0 0 var(--radius) 0}
+    .skip:focus{left:0}
+
+    a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+    /* ---------- header ---------- */
+    header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);padding-block:14px}
+    .brand{font-family:"Fraunces",serif;font-weight:600;font-size:var(--step-1);letter-spacing:-.01em;text-decoration:none}
+    nav ul{display:flex;gap:var(--sp-3);flex-wrap:wrap}
+    nav ul a{text-decoration:none;font-size:var(--step-0);color:var(--ink-soft);letter-spacing:.02em;padding-block:4px;position:relative}
+    nav ul a:hover{color:var(--ink)}
+    nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--accent);transition:right .25s ease}
+    nav ul a:hover::after{right:0}
+    @media (max-width:640px){nav ul{display:none}}
+
+    section{scroll-margin-top:80px}
+
+    /* ---------- hero ---------- */
+    .hero{padding-block:var(--sp-7) var(--sp-6)}
+    .hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:var(--sp-6);align-items:center}
+    @media (max-width:860px){.hero-grid{grid-template-columns:1fr;gap:var(--sp-4)}.hero{padding-block:var(--sp-5)}}
+    .eyebrow{font-size:var(--step-0);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:var(--sp-3)}
+    .hero h1{font-size:var(--step-5);letter-spacing:-.02em;max-width:14ch}
+    .hero h1 em{font-style:italic;color:var(--accent)}
+    .hero .lede{font-size:var(--step-2);color:var(--ink-soft);max-width:44ch;margin-top:var(--sp-3);line-height:1.45}
+    .cta-row{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-4)}
+    .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:var(--step-0);letter-spacing:.02em;padding:13px 22px;border-radius:var(--radius);border:1.5px solid var(--ink);transition:transform .18s ease,background .18s ease,color .18s ease}
+    .btn-primary{background:var(--ink);color:var(--paper)}
+    .btn-primary:hover{background:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:var(--ink)}
+    .btn-ghost:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+    .portrait{position:relative}
+    .portrait img{width:100%;max-width:360px;margin-inline:auto;border-radius:var(--radius);filter:contrast(1.02) saturate(1.02)}
+    .portrait::before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1.5px solid var(--accent);border-radius:var(--radius);z-index:-1}
+    @media (max-width:860px){.portrait img{max-width:280px}}
+
+    /* ---------- proof ---------- */
+    .proof{border-block:1px solid var(--line);background:var(--surface)}
+    .proof ul{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3)}
+    @media (max-width:640px){.proof ul{grid-template-columns:1fr}}
+    .proof li{padding-block:var(--sp-5);text-align:center;border-right:1px solid var(--line)}
+    .proof li:last-child{border-right:0}
+    @media (max-width:640px){.proof li{border-right:0;border-bottom:1px solid var(--line);padding-block:var(--sp-4)}.proof li:last-child{border-bottom:0}}
+    .proof .fig{font-family:"Fraunces",serif;font-size:var(--step-5);font-weight:600;color:var(--accent);letter-spacing:-.02em;line-height:1}
+    .proof .cap{display:block;font-size:var(--step-0);color:var(--ink-soft);margin-top:var(--sp-2);letter-spacing:.02em}
+
+    /* ---------- generic section ---------- */
+    .block{padding-block:var(--sp-7)}
+    @media (max-width:860px){.block{padding-block:var(--sp-5)}}
+    .kicker{font-size:var(--step-0);letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:12px;margin-bottom:var(--sp-3)}
+    .kicker::before{content:"";width:28px;height:1.5px;background:var(--accent)}
+    .h2{font-size:var(--step-4);letter-spacing:-.015em;margin-bottom:var(--sp-4);max-width:20ch}
+
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6)}
+    @media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:var(--sp-3)}}
+    .about-grid p{font-size:var(--step-2);line-height:1.5}
+    .about-grid p + p{margin-top:var(--sp-3)}
+    .about-meta{font-size:var(--step-0)!important;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:var(--sp-3)}
+
+    /* ---------- experience: the spine ---------- */
+    .exp-layout{display:grid;grid-template-columns:220px 1fr;gap:var(--sp-6)}
+    @media (max-width:860px){.exp-layout{grid-template-columns:1fr;gap:var(--sp-4)}}
+    .spine{position:sticky;top:96px;align-self:start;height:max-content}
+    @media (max-width:860px){.spine{display:none}}
+    .spine ol{position:relative;padding-left:22px}
+    .spine ol::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--line)}
+    .spine .fill{position:absolute;left:5px;top:6px;width:2px;background:var(--accent);height:0;transition:height .3s ease}
+    .spine li{position:relative;padding:8px 0;cursor:pointer}
+    .spine li a{text-decoration:none;font-size:var(--step-0);color:var(--ink-soft);letter-spacing:.01em;transition:color .2s ease;display:block}
+    .spine li::before{content:"";position:absolute;left:-22px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--line);transition:border-color .2s ease,background .2s ease,transform .2s ease}
+    .spine li[data-active="true"] a{color:var(--ink);font-weight:600}
+    .spine li[data-active="true"]::before{border-color:var(--accent);background:var(--accent);transform:scale(1.25)}
+
+    .roles{counter-reset:role}
+    .role{padding-block:var(--sp-4);border-top:1px solid var(--line)}
+    .role:first-child{border-top:0;padding-top:0}
+    .role:last-child{padding-bottom:0}
+    .role-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px;margin-bottom:var(--sp-2)}
+    .role h3{font-size:var(--step-3);letter-spacing:-.01em}
+    .role .org{font-weight:600;color:var(--accent)}
+    .role .time{font-size:var(--step-0);color:var(--ink-soft);letter-spacing:.03em;white-space:nowrap;font-variant-numeric:tabular-nums}
+    .role .meta{width:100%;font-size:var(--step-1);color:var(--ink-soft);margin-bottom:var(--sp-3)}
+    .role ul{display:grid;gap:10px}
+    .role ul li{position:relative;padding-left:22px;font-size:var(--step-1);line-height:1.5}
+    .role ul li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;background:var(--accent);border-radius:1px;transform:rotate(45deg)}
+
+    /* ---------- skills ---------- */
+    .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-4) var(--sp-6)}
+    @media (max-width:640px){.skills-grid{grid-template-columns:1fr;gap:var(--sp-4)}}
+    .skill-group h3{font-family:"Figtree",sans-serif;font-size:var(--step-0);text-transform:uppercase;letter-spacing:.14em;color:var(--ink-soft);font-weight:600;margin-bottom:var(--sp-2);padding-bottom:var(--sp-2);border-bottom:1px solid var(--line)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chips li{font-size:var(--step-0);padding:6px 13px;border:1px solid var(--line);border-radius:100px;background:var(--surface);transition:border-color .18s ease,color .18s ease}
+    .chips li:hover{border-color:var(--accent);color:var(--accent)}
+
+    /* ---------- education ---------- */
+    .edu-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-3)}
+    @media (max-width:640px){.edu-grid{grid-template-columns:1fr}}
+    .edu{padding:var(--sp-3);border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);transition:transform .18s ease,border-color .18s ease}
+    .edu:hover{transform:translateY(-3px);border-color:var(--accent)}
+    .edu h3{font-size:var(--step-2);margin-bottom:6px;letter-spacing:-.01em}
+    .edu p{font-size:var(--step-0);color:var(--ink-soft)}
+    .edu-note{margin-top:var(--sp-4);font-size:var(--step-0);color:var(--ink-soft);max-width:70ch}
+
+    /* ---------- contact ---------- */
+    .contact{background:var(--ink);color:var(--paper)}
+    .contact .kicker{color:#E68BB0}
+    .contact .kicker::before{background:#E68BB0}
+    .contact h2{font-size:var(--step-5);letter-spacing:-.02em;max-width:16ch;margin-bottom:var(--sp-3)}
+    .contact p{font-size:var(--step-2);color:#C9C2B8;max-width:46ch}
+    .contact .mail{display:inline-block;margin-top:var(--sp-4);font-family:"Fraunces",serif;font-size:var(--step-3);color:var(--paper);text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:4px;transition:color .2s ease}
+    .contact .mail:hover{color:#E68BB0}
+    .contact .btn-primary{background:var(--paper);color:var(--ink);border-color:var(--paper);margin-top:var(--sp-4)}
+    .contact .btn-primary:hover{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+
+    /* ---------- footer ---------- */
+    footer{background:var(--ink);color:#8A837A;border-top:1px solid #322D28}
+    footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--sp-2);padding-block:var(--sp-4);font-size:var(--step-0)}
+
+    /* reveal (enhancement only; default visible for reduced-motion & headless) */
+    .reveal{opacity:1;transform:none}
+    html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+    html.js .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion:reduce){html.js .reveal{opacity:1!important;transform:none!important;transition:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header>
+    <div class="wrap">
+      <nav aria-label="Primary">
+        <a class="brand" href="#top">Natalia Koroleva</a>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="top" class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Helsinki · Finnish citizen</p>
+          <h1 id="hero-title">IT project manager. The <em>bridge</em> between business and engineering.</h1>
+          <p class="lede">Delivery, change, and end-to-end client onboarding in regulated fintech. I make things happen against the odds while keeping the business objective at the centre.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:natalia.p.koroleva@gmail.com">Email Natalia</a>
+            <a class="btn btn-ghost" href="#experience">View experience</a>
+          </div>
+        </div>
+        <div class="portrait">
+          <picture>
+            <source srcset="img/natalia.webp" type="image/webp">
+            <img src="img/natalia.png" alt="Portrait of Natalia Koroleva" width="360" height="360">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF -->
+    <section class="proof" aria-label="Highlights">
+      <div class="wrap">
+        <ul>
+          <li><span class="fig">75</span><span class="cap">NPS — best of six countries</span></li>
+          <li><span class="fig">€1.5M</span><span class="cap">project budgets delivered</span></li>
+          <li><span class="fig">22</span><span class="cap">FTE teams managed</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="block" aria-labelledby="about-title">
+      <div class="wrap">
+        <p class="kicker">About</p>
+        <h2 class="h2" id="about-title">The person who keeps developers and stakeholders talking.</h2>
+        <div class="about-grid reveal">
+          <div>
+            <p>My background sits on both sides of the table at once: IT delivery and commercial operations. I translate between developers and stakeholders without a third language in the middle, and keep a programme moving when the two start talking past each other.</p>
+          </div>
+          <div>
+            <p>Most of my recent work is fintech and debt management — end-to-end client onboarding, UAT, change on critical systems, and process documentation in regulated environments where the details are not optional.</p>
+            <p class="about-meta">Based in Helsinki. English fluent · Finnish intermediate · Russian native · Ukrainian basic.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE: signature spine -->
+    <section id="experience" class="block" aria-labelledby="experience-title" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <p class="kicker">Experience</p>
+        <h2 class="h2" id="experience-title">Fifteen years of delivery, compounding.</h2>
+        <div class="exp-layout">
+          <nav class="spine" aria-label="Career timeline">
+            <ol>
+              <span class="fill" aria-hidden="true"></span>
+              <li data-active="true"><a href="#role-1">GF Money · <small>’24</small></a></li>
+              <li><a href="#role-2">Axactor, Zolva · <small>’20</small></a></li>
+              <li><a href="#role-3">JAS Partners · <small>’19</small></a></li>
+              <li><a href="#role-4">YIT Construction · <small>’16</small></a></li>
+              <li><a href="#role-5">Porvoo Assoc. · <small>’11</small></a></li>
+              <li><a href="#role-6">Marketing &amp; Comms · <small>’05</small></a></li>
+            </ol>
+          </nav>
+
+          <ol class="roles">
+            <li class="role" id="role-1">
+              <div class="role-head">
+                <h3>IT Project Manager</h3>
+                <span class="time">Mar 2024 – present</span>
+              </div>
+              <p class="meta"><span class="org">GF Money</span> · Fintech</p>
+              <ul>
+                <li>Made communication between business and IT straightforward; minimised disruption while changing critical systems and services.</li>
+                <li>Built a new balance-calculation system and a data warehouse so the business can reach data without a ticket queue.</li>
+                <li>Cut the backlog by 60% in three months.</li>
+                <li>CRM development, integrations, implementation, and UAT; decomposed work into detailed tasks for technical teams.</li>
+                <li>Launched two new products in two countries in one year.</li>
+                <li>Day-to-day team management, hiring developers, and conflict resolution.</li>
+                <li>Stood up the company’s Confluence from scratch; wrote CRM technical documentation and facilitated business-logic docs.</li>
+              </ul>
+            </li>
+            <li class="role" id="role-2">
+              <div class="role-head">
+                <h3>IT Project Manager, Business Analyst</h3>
+                <span class="time">Jan 2020 – Oct 2022</span>
+              </div>
+              <p class="meta"><span class="org">Axactor, Zolva</span> · Fintech debt collection · Client onboarding</p>
+              <ul>
+                <li>Helped the business adopt a new way of working: clarified priorities, documented them, and established processes.</li>
+                <li>Core collection-system development, integrations, implementation, and UAT; resource and budget planning and control.</li>
+                <li>Launched a new core collection system for a new country through first GoLive in three months.</li>
+                <li>Owned end-to-end client onboarding; documented the process by client type and tooling.</li>
+                <li>Steering-committee packs, weekly reports, and closure reports; requirements for new features.</li>
+                <li>Wrote guides and ran training so users could actually use the new software.</li>
+              </ul>
+            </li>
+            <li class="role" id="role-3">
+              <div class="role-head">
+                <h3>Junior Web Developer</h3>
+                <span class="time">Aug 2019 – Dec 2019</span>
+              </div>
+              <p class="meta"><span class="org">JAS Partners</span></p>
+              <ul>
+                <li>Proof of concept: rebuilt the site as a React single-page application.</li>
+                <li>Architecture for the migration, implementation, and ongoing maintenance.</li>
+                <li>JSX, React, Bootstrap, Redux, Axios, AJAX, Highcharts, Firebase, Thunk, CSS Modules, Jest, Enzyme.</li>
+              </ul>
+            </li>
+            <li class="role" id="role-4">
+              <div class="role-head">
+                <h3>Assistant Development Manager, Digital Services</h3>
+                <span class="time">Aug 2016 – May 2018</span>
+              </div>
+              <p class="meta"><span class="org">YIT Construction</span></p>
+              <ul>
+                <li>Launched corporate and business sites on Episerver; UX/UI design.</li>
+                <li>Created and validated a social-media strategy for the Russian market and launched the channels.</li>
+                <li>Took a Scaled Agile Framework course and sat on the change-management team adopting SAFe.</li>
+                <li>Trained marketing specialists on Episerver, SharePoint, social communications, storytelling, and selling copy.</li>
+              </ul>
+            </li>
+            <li class="role" id="role-5">
+              <div class="role-head">
+                <h3>Project Coordinator</h3>
+                <span class="time">Jan 2011 – Dec 2015</span>
+              </div>
+              <p class="meta"><span class="org">Multicultural Association of Porvoo</span></p>
+              <ul>
+                <li>Event and project management, fundraising, grant applications, and budgets.</li>
+                <li>Recruited, coordinated, managed, and trained organisational volunteers.</li>
+                <li>Business consulting for immigrant members; coaching on motivation, CVs, and project management.</li>
+              </ul>
+            </li>
+            <li class="role" id="role-6">
+              <div class="role-head">
+                <h3>Marketing &amp; Communication Manager</h3>
+                <span class="time">Jan 2005 – Dec 2010</span>
+              </div>
+              <p class="meta"><span class="org">Financial companies &amp; nuclear industry</span></p>
+              <ul>
+                <li>Marketing and communication, public affairs, social media, reputation management, and branding.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="block" aria-labelledby="skills-title" style="border-top:1px solid var(--line);background:var(--surface)">
+      <div class="wrap">
+        <p class="kicker">Skills &amp; tools</p>
+        <h2 class="h2" id="skills-title">What I bring to a delivery team.</h2>
+        <div class="skills-grid reveal">
+          <div class="skill-group">
+            <h3>Core</h3>
+            <ul class="chips">
+              <li>Project management</li><li>Budgeting &amp; cost analysis</li><li>Resource planning</li><li>Change management</li><li>UAT</li><li>Process documentation</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Methods</h3>
+            <ul class="chips">
+              <li>Agile</li><li>Scrum</li><li>Kanban</li><li>SAFe</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Tools &amp; technical</h3>
+            <ul class="chips">
+              <li>Jira</li><li>Confluence</li><li>Monday</li><li>MS Project</li><li>Trello</li><li>JavaScript</li><li>Java</li><li>React</li><li>HTML/CSS</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <ul class="chips">
+              <li>English — fluent</li><li>Finnish — intermediate</li><li>Russian — native</li><li>Ukrainian — basic</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="block" aria-labelledby="education-title">
+      <div class="wrap">
+        <p class="kicker">Education &amp; certificates</p>
+        <h2 class="h2" id="education-title">Studied on both sides of the bridge.</h2>
+        <div class="edu-grid reveal">
+          <div class="edu">
+            <h3>Master’s — Professional Project Management</h3>
+            <p>JAMK University of Applied Sciences · 2020 – present</p>
+          </div>
+          <div class="edu">
+            <h3>Vocational qualification in ICT — Full-stack web developer</h3>
+            <p>Business College Helsinki · 2019 – 2020</p>
+          </div>
+          <div class="edu">
+            <h3>Marketing &amp; Business Administration</h3>
+            <p>Porvoo International College, Finland · 2011 – 2013</p>
+          </div>
+          <div class="edu">
+            <h3>Diploma with highest honours — Marketing</h3>
+            <p>MIRBIS Business School, Plekhanov Economic Academy · 2008</p>
+          </div>
+          <div class="edu">
+            <h3>Master’s with highest honours — Philology</h3>
+            <p>State Pedagogical University, Russia · 1998 – 2005</p>
+          </div>
+          <div class="edu">
+            <h3>Professional courses</h3>
+            <p>SAFe · Episerver · group facilitation · mental resilience · coaching (business, time, decision-making).</p>
+          </div>
+        </div>
+        <p class="edu-note">Volunteering with the Cherie Blair Foundation for Women, SAMHA, Sininauhasäätiö, and Luckan. Off the clock: Brazilian jiu-jitsu and screenwriting. References available on request.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="block contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <p class="kicker">Contact</p>
+        <h2 id="contact-title">Let’s talk about your next programme.</h2>
+        <p>Based in Helsinki and open to the right delivery, programme, or PM role. The fastest way to reach me is email.</p>
+        <br>
+        <a class="mail" href="mailto:natalia.p.koroleva@gmail.com">natalia.p.koroleva@gmail.com</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© Natalia Koroleva · Helsinki</span>
+      <span>Built from CV. Phone and referee contacts kept off this page.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.documentElement.classList.add('js');
+
+    // reduced-motion aware
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Reveal-on-scroll (enhancement). Fallback: force .in if IO never fires.
+    (function(){
+      var targets = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+      if (reduce || !('IntersectionObserver' in window)) {
+        targets.forEach(function(t){ t.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, {rootMargin:'0px 0px -10% 0px', threshold:0.1});
+      targets.forEach(function(t){ io.observe(t); });
+      // safety net so headless / idle never leaves content hidden
+      var force = function(){ targets.forEach(function(t){ t.classList.add('in'); }); };
+      if ('requestIdleCallback' in window) requestIdleCallback(force, {timeout:2500});
+      setTimeout(force, 2500);
+    })();
+
+    // Signature: scroll-driven spine. Active role highlights; fill line grows.
+    (function(){
+      var roles = Array.prototype.slice.call(document.querySelectorAll('.role'));
+      var items = Array.prototype.slice.call(document.querySelectorAll('.spine li'));
+      var fill  = document.querySelector('.spine .fill');
+      var spineOl = document.querySelector('.spine ol');
+      if (!roles.length || !items.length) return;
+
+      function setActive(i){
+        items.forEach(function(li,idx){ li.setAttribute('data-active', idx===i ? 'true':'false'); });
+        if (fill && spineOl){
+          var active = items[i];
+          var h = active.offsetTop + active.offsetHeight/2;
+          fill.style.height = h + 'px';
+        }
+      }
+
+      if ('IntersectionObserver' in window){
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(e){
+            if (e.isIntersecting){
+              var idx = roles.indexOf(e.target);
+              if (idx>=0) setActive(idx);
+            }
+          });
+        }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+        roles.forEach(function(r){ io.observe(r); });
+      }
+      setActive(0);
+    })();
+  </script>
+</body>
+</html>
