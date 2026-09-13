@@ -1,4 +1,5 @@
 # Natalia Koroleva — Portfolio
 
-Interactive one-page portfolio for Natalia Koroleva, IT Project Manager (Helsinki).
-Built from CV. Static single-file site, deployed via GitHub Pages.
+IT Project Manager, Helsinki.
+
+Live: https://natalia.46.225.91.43.sslip.io
