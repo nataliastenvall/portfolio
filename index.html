@@ -6,6 +6,13 @@
 <title>Natalia Koroleva — IT Project Manager, Helsinki</title>
 <meta name="description" content="IT Project Manager in Helsinki. NPS 75, the best among six countries: Finland, Germany, Italy, Norway, Spain and Sweden. Teams to 22 FTE, budgets to €1.5M, fintech and debt management.">
 <meta name="theme-color" content="#DEE2DE">
+<meta property="og:title" content="Natalia Koroleva — IT Project Manager, Helsinki">
+<meta property="og:description" content="I build bridges between cultures, teams, and the people who depend on the system. Helsinki.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/og-card.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231B1A1E'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23DEE2DE' text-anchor='middle'>N</text></svg>">
 <style>
   *,*::before,*::after{box-sizing:border-box}
@@ -18,133 +25,144 @@
     --rule:#C8CBC8;
     --paper:#DEE2DE;
     --paper-2:#E8EBE8;
-    --accent:#4A4453;
+    --accent:#7A3A48;
     --sp:8px;
     --measure:34rem;
+    --ease-out:cubic-bezier(0.23, 1, 0.32, 1);
   }
   html{-webkit-text-size-adjust:100%;touch-action:manipulation}
   body{
     margin:0;background:var(--paper);color:var(--ink);
-    font-family:"Helvetica Neue",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    font-family:"Schibsted Grotesk","Avenir Next","Segoe UI",system-ui,sans-serif;
     font-size:17px;line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3,.num{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:-.012em;text-wrap:pretty}
+  h1,h2,h3,.num{font-weight:600;letter-spacing:-.03em;text-wrap:pretty}
   a{color:inherit}
   .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 24px}
   .skip{position:absolute;left:-999px;min-height:44px}
   .skip:focus{left:24px;top:12px;background:var(--ink);color:var(--paper);padding:10px 14px;z-index:99}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-  /* ---------- masthead: name as the page's typographic anchor ---------- */
-  .mast{padding:calc(var(--sp)*3) 0 calc(var(--sp)*2)}
-  .kicker{
-    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);
-    display:flex;gap:14px;flex-wrap:wrap;align-items:baseline;margin:0 0 calc(var(--sp)*2)
+  .mast{padding:calc(var(--sp)*4) 0 calc(var(--sp)*3)}
+  .place{
+    margin:0 0 calc(var(--sp)*3);
+    font-size:14px;color:var(--ink-soft);font-weight:500;
   }
-  .kicker b{font-weight:600;color:var(--ink-2)}
-  h1{
-    font-size:clamp(2.9rem,13vw,6.4rem);line-height:.92;margin:0;
-    letter-spacing:-.028em;
-  }
-  h1 .l2{display:block;padding-left:.06em}
+  h1{font-size:clamp(2.4rem,8vw,4.4rem);line-height:.95;margin:0}
   .role{
-    margin:calc(var(--sp)*2) 0 0;font-size:clamp(1rem,4.1vw,1.35rem);
-    line-height:1.32;max-width:26rem;color:var(--ink-2)
+    margin:calc(var(--sp)*2) 0 0;font-size:clamp(1.05rem,2.6vw,1.28rem);
+    line-height:1.45;max-width:32rem;color:var(--ink-2)
   }
-  .role em{font-style:normal;box-shadow:inset 0 -.42em 0 color-mix(in srgb, var(--accent) 22%, transparent)}
+  .avail{
+    display:inline-flex;align-items:center;gap:9px;margin:calc(var(--sp)*2.25) 0 0;
+    font-size:14px;color:var(--ink-2);font-weight:500
+  }
+  .avail::before{
+    content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:calc(var(--sp)*2)}
+  .hero-cta a{
+    display:inline-flex;align-items:center;text-decoration:none;font-size:15px;font-weight:500;
+    padding:13px 20px;border:1px solid var(--ink);min-height:48px;
+    transition:transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease, color 160ms ease
+  }
+  .hero-cta a.primary{background:var(--ink);color:var(--paper)}
+  .hero-cta a.primary:hover{background:var(--accent);border-color:var(--accent)}
+  .hero-cta a.ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .hero-cta a:active{transform:scale(0.97)}
 
-  .id{display:flex;gap:16px;align-items:flex-start;margin-top:calc(var(--sp)*2.25)}
+  .id{margin-top:calc(var(--sp)*3)}
   .id img{
-    width:92px;height:92px;border-radius:2px;object-fit:cover;flex:none;
+    width:min(100%,280px);aspect-ratio:1;object-fit:cover;object-position:center 18%;
+    display:block;
     border:1px solid color-mix(in srgb, var(--ink) 14%, transparent);
-    box-shadow:0 1px 2px color-mix(in srgb, var(--ink) 10%, transparent);
+    animation:photo-in 700ms var(--ease-out) both;
   }
-  .id-meta{font-size:14px;color:var(--ink-soft);line-height:1.6;padding-top:2px}
+  @keyframes photo-in{
+    from{clip-path:inset(0 0 100% 0);opacity:.45}
+    to{clip-path:inset(0);opacity:1}
+  }
+  .id-meta{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:14px 0 0;max-width:280px}
   .id-meta a{text-decoration:none;border-bottom:1px solid var(--rule);display:inline-block;min-height:44px;padding:11px 0}
-  .id-meta a:hover{border-color:var(--accent);color:var(--accent)}
+  @media (hover:hover) and (pointer:fine){
+    .id-meta a:hover{border-color:var(--accent);color:var(--accent)}
+  }
 
-  /* ---------- evidence strip: numbers that open their own proof ---------- */
-  .evidence{margin:calc(var(--sp)*2.75) 0 0;border-top:2px solid var(--ink)}
-  .ev-lede{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);padding:14px 0 0;margin:0}
+  .evidence{margin:calc(var(--sp)*2) 0 0;border-top:2px solid var(--ink)}
+  .ev-lede{font-size:14px;color:var(--mute);padding:14px 0 0;margin:0}
   .ev{border-bottom:1px solid var(--rule)}
   .ev:first-of-type{margin-top:10px;border-top:1px solid var(--rule)}
   .ev-btn{
     all:unset;box-sizing:border-box;display:grid;grid-template-columns:auto 1fr auto;
     gap:18px;align-items:baseline;width:100%;padding:16px 2px;cursor:pointer;min-height:48px;
+    transition:transform 160ms var(--ease-out)
   }
-  .ev-btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-  .num{font-size:clamp(2.1rem,9vw,3rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
-  .ev-label{font-size:14px;line-height:1.4;color:var(--ink-2)}
-  .ev-sign{font-size:22px;color:var(--mute);line-height:1;transition:transform .18s ease}
+  .ev-btn:active{transform:scale(0.985)}
+  .num{font-size:clamp(2.1rem,9vw,3rem);line-height:1;letter-spacing:-.04em;font-variant-numeric:lining-nums tabular-nums}
+  .ev-label{font-size:15px;line-height:1.4;color:var(--ink-2)}
+  .ev-sign{font-size:22px;color:var(--mute);line-height:1;transition:transform 180ms var(--ease-out), color 180ms ease}
   .ev[open-state="1"] .ev-sign{transform:rotate(45deg);color:var(--accent)}
-  .ev-body{
-    display:grid;grid-template-rows:0fr;transition:grid-template-rows .26s cubic-bezier(.3,.8,.3,1);
-  }
+  .ev-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows 220ms var(--ease-out)}
   .ev[open-state="1"] .ev-body{grid-template-rows:1fr}
   .ev-body>div{overflow:hidden}
-  .ev-quote{
-    margin:0;padding:0 0 20px 0;max-width:var(--measure);
-    font-size:15.5px;line-height:1.6;color:var(--ink-2)
-  }
-  .ev-src{display:block;margin-top:8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  .ev-quote{margin:0;padding:0 0 20px 0;max-width:var(--measure);font-size:15.5px;line-height:1.6;color:var(--ink-2)}
+  .ev-src{display:block;margin-top:8px;font-size:13px;color:var(--mute)}
   .ev-countries{
-    display:block;margin-top:12px;font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
-    font-size:15.5px;line-height:1.5;color:var(--ink);
+    display:block;margin-top:12px;font-size:15.5px;line-height:1.5;color:var(--ink);
     border-left:2px solid var(--accent);padding-left:12px
   }
 
-  /* ---------- sections ---------- */
   section{padding:calc(var(--sp)*9) 0 0}
   .sec-h{
     display:grid;grid-template-columns:1fr;gap:6px;margin:0 0 calc(var(--sp)*4);
     border-top:1px solid var(--rule);padding-top:14px
   }
-  .sec-n{font-size:12px;letter-spacing:.18em;color:var(--mute);text-transform:uppercase}
-  h2{font-size:clamp(1.6rem,6.4vw,2.3rem);line-height:1.1;margin:0;max-width:20rem;scroll-margin-top:24px}
+  .sec-n{font-size:14px;color:var(--ink-soft);font-weight:500}
+  h2{font-size:clamp(1.55rem,5.4vw,2.15rem);line-height:1.12;margin:0;max-width:22rem}
 
-  /* ---------- work: a real spine, not cards ---------- */
   .job{
     display:grid;grid-template-columns:1fr;gap:6px;
     padding:calc(var(--sp)*3.5) 0;border-top:1px solid var(--rule)
   }
   .job:last-child{border-bottom:1px solid var(--rule)}
-  .job-when{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--mute)}
+  .job-when{font-size:13.5px;color:var(--ink-soft)}
   h3{font-size:1.18rem;line-height:1.25;margin:0}
-  .job-org{font-size:14.5px;color:var(--accent);margin:0}
+  .job-org{font-size:14.5px;color:var(--accent);margin:0;font-weight:500}
   .job-did{margin:8px 0 0;max-width:var(--measure);color:var(--ink-2);font-size:15.5px}
   .job-did li{margin:0 0 6px}
   ul{padding-left:1.05em;margin:0}
 
-  /* ---------- languages: the actual through-line of her CV ---------- */
   .langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));column-gap:28px;row-gap:0;border-top:1px solid var(--rule)}
   .lang{padding:16px 0;border-bottom:1px solid var(--rule);min-width:0}
   .lang b,.lang span{overflow-wrap:break-word}
   .lang b{display:block;font-size:1.05rem;font-weight:600}
-  .lang span{font-size:13px;color:var(--mute)}
+  .lang span{font-size:13px;color:var(--ink-soft)}
 
   .cols{display:grid;grid-template-columns:1fr;gap:calc(var(--sp)*3)}
-  .col h4{margin:0 0 8px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);font-weight:600}
+  .col h4{margin:0 0 8px;font-size:15px;color:var(--ink);font-weight:600}
   .col p{margin:0;color:var(--ink-2);font-size:15.5px;max-width:var(--measure)}
 
   .edu{border-top:1px solid var(--rule)}
   .edu-row{padding:15px 0;border-bottom:1px solid var(--rule)}
   .edu-row b{font-weight:600}
-  .edu-row span{display:block;font-size:13.5px;color:var(--mute);margin-top:3px}
+  .edu-row span{display:block;font-size:13.5px;color:var(--ink-soft);margin-top:3px}
 
-  /* ---------- close ---------- */
   .close{margin-top:calc(var(--sp)*10);background:var(--ink);color:var(--paper)}
   .close .wrap{padding-top:calc(var(--sp)*8);padding-bottom:calc(var(--sp)*8)}
   .close h2{color:var(--paper);max-width:24rem}
-  .close p{color:#B9B2C0;max-width:var(--measure);font-size:16px}
-  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:calc(var(--sp)*4)}
+  .close p{color:#C5C8C4;max-width:var(--measure);font-size:16px}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:calc(var(--sp)*4)}
   .cta a{
-    display:inline-block;padding:15px 22px;text-decoration:none;font-size:15px;
-    border:1px solid #4A4453;border-radius:2px;min-height:48px;line-height:1.4
+    display:inline-block;padding:15px 22px;text-decoration:none;font-size:15px;font-weight:500;
+    border:1px solid #4A4453;min-height:48px;line-height:1.4;
+    transition:transform 160ms var(--ease-out), border-color 160ms ease
   }
-  .cta a.primary{background:var(--paper);color:var(--ink);border-color:var(--paper);font-weight:600}
+  .cta a.primary{background:var(--paper);color:var(--ink);border-color:var(--paper)}
   .cta a:hover{border-color:var(--paper)}
-  .cta a:focus-visible{outline:2px solid var(--paper);outline-offset:3px}
-  footer{background:var(--ink);color:#9F98AB;font-size:12.5px}
+  .cta a:active{transform:scale(0.97)}
+  .cta .cta-note{display:inline-flex;align-items:center;padding:15px 0;font-size:14px;color:#A8ABA8}
+  footer{background:var(--ink);color:#A8ABA8;font-size:13px}
   footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:calc(var(--sp)*5)}
 
   @media (min-width:760px){
@@ -153,10 +171,21 @@
     .job{grid-template-columns:170px 1fr;gap:24px}
     .job-when{padding-top:4px}
     .cols{grid-template-columns:1fr 1fr;gap:calc(var(--sp)*5)}
-    .id img{width:132px;height:132px}
     .ev-btn{grid-template-columns:150px 1fr auto;padding:22px 2px}
   }
-  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+  @media (min-width:960px){
+    .mast-grid{
+      display:grid;grid-template-columns:minmax(0,1fr) 340px;
+      gap:calc(var(--sp)*7);align-items:start
+    }
+    .id{margin-top:4px}
+    .id img{width:340px}
+    .id-meta{max-width:340px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .id img{animation:none}
+    .ev-body,.ev-sign,.hero-cta a,.cta a,.ev-btn{transition:none!important}
+  }
 </style>
 </head>
 <body>
@@ -164,30 +193,37 @@
 
 <header class="mast">
   <div class="wrap">
-    <p class="kicker"><b>Natalia Koroleva</b> <span>Helsinki, Finland</span></p>
-    <h1>Natalia<span class="l2">Koroleva</span></h1>
-    <p class="role">IT Project Manager. I build bridges: between <em>cultures</em>, between <em>teams</em>, and between the people who <em>build the system</em> and the people who <em>depend on it</em>.</p>
+    <p class="place">Helsinki · IT project manager</p>
+    <div class="mast-grid">
+      <div class="mast-type">
+        <h1>Natalia Koroleva</h1>
+        <p class="role">IT Project Manager. I build bridges: between cultures, between teams, and between the people who build the system and the people who depend on it.</p>
+        <p class="avail">Available for work in Helsinki</p>
+        <div class="hero-cta">
+          <a class="primary" href="mailto:natalia.p.koroleva@gmail.com">Email Natalia</a>
+          <a class="ghost" href="#main">Evidence</a>
+        </div>
+      </div>
 
-    <div class="id">
-      <picture>
-        <source type="image/webp" srcset="img/natalia-640.webp?v=20260907c 640w, img/natalia.webp?v=20260907c 828w" sizes="132px">
-        <img src="img/natalia.jpg?v=20260907c" srcset="img/natalia-640.jpg?v=20260907c 640w, img/natalia.jpg?v=20260907c 828w" sizes="132px" alt="Natalia Koroleva" width="828" height="828" fetchpriority="high">
-      </picture>
-      <p class="id-meta">
-        Project · Program · Delivery Management<br>
-        Fintech and debt management<br>
-        <a href="mailto:natalia.p.koroleva@gmail.com">natalia.p.koroleva@gmail.com</a>
-      </p>
+      <div class="id">
+        <picture>
+          <source type="image/webp" srcset="img/natalia-640.webp?v=20260915b 640w, img/natalia.webp?v=20260915b 828w" sizes="(min-width:960px) 340px, 280px">
+          <img src="img/natalia.jpg?v=20260915b" srcset="img/natalia-640.jpg?v=20260915b 640w, img/natalia.jpg?v=20260915b 828w" sizes="(min-width:960px) 340px, 280px" alt="Natalia Koroleva" width="828" height="828" fetchpriority="high">
+        </picture>
+        <p class="id-meta">
+          Project, program and delivery management<br>
+          Fintech and debt management<br>
+          <a href="mailto:natalia.p.koroleva@gmail.com">natalia.p.koroleva@gmail.com</a>
+        </p>
+      </div>
     </div>
   </div>
 </header>
 
 <main id="main">
-
-  <!-- EVIDENCE: every number opens the exact line from her CV that backs it -->
   <div class="wrap">
     <div class="evidence">
-      <p class="ev-lede">Four numbers · tap any one for the evidence behind it</p>
+      <p class="ev-lede">Four numbers. Open any one for the line that backs it.</p>
 
       <div class="ev" open-state="0">
         <button class="ev-btn" aria-expanded="false" aria-controls="ev1">
@@ -197,7 +233,7 @@
         </button>
         <div class="ev-body" id="ev1"><div>
           <p class="ev-quote">Expert in end-to-end client onboarding, achieving NPS scores in the top tier across six countries. I owned smooth client onboarding end-to-end at Axactor and Zolva, where onboarding ran across those markets.
-            <span class="ev-src">From my CV — summary and key achievements</span>
+            <span class="ev-src">From my record — summary and key achievements</span>
             <span class="ev-countries">Finland · Germany · Italy · Norway · Spain · Sweden</span></p>
         </div></div>
       </div>
@@ -210,7 +246,7 @@
         </button>
         <div class="ev-body" id="ev2"><div>
           <p class="ev-quote">Managing teams up to 22 FTE. Daily team management and support, hiring developers, resolving conflicts.
-            <span class="ev-src">From my CV — key achievements and GF Money</span></p>
+            <span class="ev-src">From my record — GF Money</span></p>
         </div></div>
       </div>
 
@@ -222,7 +258,7 @@
         </button>
         <div class="ev-body" id="ev3"><div>
           <p class="ev-quote">Implemented projects with budgets up to 1.5 million euros, including resource and budget planning and control on the core collection system at Axactor and Zolva.
-            <span class="ev-src">From my CV — key achievements and Axactor / Zolva</span></p>
+            <span class="ev-src">From my record — Axactor / Zolva</span></p>
         </div></div>
       </div>
 
@@ -234,7 +270,7 @@
         </button>
         <div class="ev-body" id="ev4"><div>
           <p class="ev-quote">Backlog management at GF Money: in three months the backlog reduced by 60%.
-            <span class="ev-src">From my CV — GF Money</span></p>
+            <span class="ev-src">From my record — GF Money</span></p>
         </div></div>
       </div>
     </div>
@@ -242,7 +278,7 @@
 
   <section>
     <div class="wrap">
-      <div class="sec-h"><span class="sec-n">01 — Position</span>
+      <div class="sec-h"><span class="sec-n">Position</span>
         <h2>A bridge, in four directions.</h2>
       </div>
       <div class="cols">
@@ -268,7 +304,7 @@
 
   <section>
     <div class="wrap">
-      <div class="sec-h"><span class="sec-n">02 — Work</span>
+      <div class="sec-h"><span class="sec-n">Work</span>
         <h2>Where I have delivered.</h2>
       </div>
 
@@ -327,7 +363,7 @@
       <article class="job">
         <p class="job-when">2005 — 2015</p>
         <div>
-          <h3>Project Coordinator, then Marketing &amp; Communications Manager</h3>
+          <h3>Project Coordinator, then Marketing & Communications Manager</h3>
           <p class="job-org">Multicultural Association of Porvoo · financial companies and nuclear industry</p>
           <ul class="job-did">
             <li>Event and project management, fundraising, grant applications and budgets.</li>
@@ -340,7 +376,7 @@
 
   <section>
     <div class="wrap">
-      <div class="sec-h"><span class="sec-n">03 — Languages</span>
+      <div class="sec-h"><span class="sec-n">Languages</span>
         <h2>Four human, five technical.</h2>
       </div>
       <div class="langs">
@@ -358,7 +394,7 @@
 
   <section>
     <div class="wrap">
-      <div class="sec-h"><span class="sec-n">04 — Education</span>
+      <div class="sec-h"><span class="sec-n">Education</span>
         <h2>Studied on both sides of the bridge.</h2>
       </div>
       <div class="edu">
@@ -385,9 +421,10 @@
 <div class="close">
   <div class="wrap">
     <h2>Available for IT project and delivery management in Helsinki.</h2>
-    <p>Fintech, debt management, and any regulated environment where the details are not optional. References available from a former CIO and a current CEO.</p>
+    <p>Fintech, debt management, and any regulated environment where the details are not optional. References on request.</p>
     <div class="cta">
       <a class="primary" href="mailto:natalia.p.koroleva@gmail.com">natalia.p.koroleva@gmail.com</a>
+      <span class="cta-note">Phone on request</span>
     </div>
   </div>
 </div>
@@ -395,20 +432,18 @@
 <footer>
   <div class="wrap">
     <span>© Natalia Koroleva · Helsinki</span>
-    <span class="build-stamp" data-build="20260915-fix">Updated 20260915-fix UTC</span>
+    <span class="build-stamp" data-build="20260915-nbg1">Updated 20260915-nbg1 UTC</span>
   </div>
 </footer>
 
 <script>
 (function(){
-  // Signature interaction: a number opens the evidence that backs it.
   document.querySelectorAll('.ev').forEach(function(ev){
     var btn = ev.querySelector('.ev-btn');
     btn.addEventListener('click', function(){
       var open = ev.getAttribute('open-state') === '1';
       ev.setAttribute('open-state', open ? '0' : '1');
       btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-      ev.querySelector('.ev-sign').textContent = open ? '+' : '+';
     });
   });
 })();
