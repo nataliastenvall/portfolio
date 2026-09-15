@@ -186,13 +186,17 @@
     .id img{width:340px}
     .id-meta{max-width:340px}
   }
+  #atm{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
+  .mast,main,.close,footer{position:relative;z-index:1}
   @media (prefers-reduced-motion:reduce){
     .id img{animation:none}
     .ev-body,.ev-sign,.hero-cta a,.cta a,.ev-btn{transition:none!important}
+    #atm{display:none}
   }
 </style>
 </head>
 <body>
+<canvas id="atm" aria-hidden="true"></canvas>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="mast">
@@ -436,7 +440,7 @@
 <footer>
   <div class="wrap">
     <span>© Natalia Koroleva · Helsinki</span>
-    <span class="build-stamp" data-build="20260915-nbg1">Updated 20260915-nbg1 UTC</span>
+    <span class="build-stamp" data-build="20260915-webgl">Updated 20260915-webgl UTC</span>
   </div>
 </footer>
 
@@ -480,5 +484,9 @@
   window.addEventListener('pageshow', function(e){ if (e.persisted) check(); });
 })();
 </script>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}
+</script>
+<script type="module" src="js/atm.js"></script>
 </body>
 </html>
