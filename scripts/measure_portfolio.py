@@ -19,4 +19,12 @@ if "I build bridges" in html:
     n += 1
 if "setInterval" in html and "pageshow" in html:
     n += 1
+if "tel:" not in html.lower() and "+358" not in html:
+    n += 1
+if "Finnish citizen" not in html:
+    n += 1
+if "--ink-soft:" in html:
+    n += 1
+if "--paper:#DEE2DE" in html:
+    n += 1
 print(n)
