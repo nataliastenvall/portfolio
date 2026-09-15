@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """Print how many live-portfolio gates pass on trunk. Stdlib only."""
 import hashlib
+import re
 from pathlib import Path
 
 PHOTO_MD5 = "d596a33b89fd8a702fd183781f266149"
 COUNTRIES = ("Finland", "Germany", "Italy", "Norway", "Spain", "Sweden")
+# third parties who did not consent to a public page
+REFEREES = ("former CIO", "current CEO")
 
 html_path = Path("index.html")
 photo_path = Path("img/natalia.jpg")
@@ -26,5 +29,14 @@ if "Finnish citizen" not in html:
 if "--ink-soft:" in html:
     n += 1
 if "--paper:#DEE2DE" in html:
+    n += 1
+if not any(r in html for r in REFEREES):
+    n += 1
+# a recruiter can act from the hero, not after four accordions
+if 'class="hero-cta"' in html and 'class="avail"' in html:
+    n += 1
+# every auto-fit grid needs an explicit column gutter (React/Java collided at 390)
+autofit = re.findall(r"\{[^{}]*auto-fit[^{}]*\}", html)
+if autofit and all(("column-gap:" in r or re.search(r"[^-]gap:\s*[1-9]", r)) for r in autofit):
     n += 1
 print(n)
