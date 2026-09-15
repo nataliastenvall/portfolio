@@ -39,4 +39,9 @@ if 'class="hero-cta"' in html and 'class="avail"' in html:
 autofit = re.findall(r"\{[^{}]*auto-fit[^{}]*\}", html)
 if autofit and all(("column-gap:" in r or re.search(r"[^-]gap:\s*[1-9]", r)) for r in autofit):
     n += 1
+# a width+height attr pair makes height a real CSS declaration, which defeats
+# aspect-ratio and stretched the portrait to 280x828 on the live page
+portrait = re.search(r"\.id img\{[^}]*\}", html)
+if portrait and "aspect-ratio" in portrait.group(0) and "height:auto" in portrait.group(0):
+    n += 1
 print(n)
