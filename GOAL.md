@@ -6,4 +6,9 @@ Not a generated likeness. Not a downloadable CV (phone and referees stay private
 
 ## Numbers that prove it
 
-- portfolio source gates (approved photo md5, six countries, first-person lede, mobile self-refresh, no tel, no citizenship, ink-soft token, paper #DEE2DE): `python3 scripts/measure_portfolio.py` - today: 8; target: 8
+The measure name has to stay under 90 characters or the manager's
+`NUMBERS_LINE_RE` never matches the line and the channel reads `not measured
+yet` with a green GOAL.md sitting on trunk. Gate details live in
+`scripts/measure_portfolio.py`, not in the metric name.
+
+- portfolio source gates on trunk: `python3 scripts/measure_portfolio.py` - today: 12; target: 12
