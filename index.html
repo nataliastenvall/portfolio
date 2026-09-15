@@ -116,8 +116,9 @@
   ul{padding-left:1.05em;margin:0}
 
   /* ---------- languages: the actual through-line of her CV ---------- */
-  .langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border-top:1px solid var(--rule)}
-  .lang{padding:16px 0;border-bottom:1px solid var(--rule)}
+  .langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));column-gap:28px;row-gap:0;border-top:1px solid var(--rule)}
+  .lang{padding:16px 0;border-bottom:1px solid var(--rule);min-width:0}
+  .lang b,.lang span{overflow-wrap:break-word}
   .lang b{display:block;font-size:1.05rem;font-weight:600}
   .lang span{font-size:13px;color:var(--mute)}
 
