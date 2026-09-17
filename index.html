@@ -44,34 +44,29 @@
   .skip:focus{left:24px;top:12px;background:var(--ink);color:var(--paper);padding:10px 14px;z-index:99}
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-  .mast{
-    min-height:100svh;display:flex;align-items:center;
-    padding:max(16px, env(safe-area-inset-top)) 0 max(20px, env(safe-area-inset-bottom));
+  /* first screen is a print, not a widget on a shader */
+  .mast{padding:0}
+  .bcard{display:grid;grid-template-columns:1fr}
+  .id{margin:0}
+  .id img{
+    width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:center 18%;
+    display:block;max-height:48svh;
+    animation:photo-in 640ms var(--ease-out) both;
   }
-  .bcard{
-    display:grid;grid-template-columns:1fr;
-    max-width:22.5rem;margin-inline:auto;
-    background:var(--paper-2);
-    border:1px solid color-mix(in srgb, var(--ink) 18%, transparent);
-    overflow:hidden;
+  @keyframes photo-in{
+    from{clip-path:inset(0 0 100% 0);opacity:.5}
+    to{clip-path:inset(0);opacity:1}
   }
-  .place{
-    margin:0 0 8px;
-    font-size:13px;color:var(--ink-soft);font-weight:500;
-  }
-  h1{font-size:clamp(1.7rem,7vw,2.35rem);line-height:.95;margin:0}
-  .role{
-    margin:10px 0 0;font-size:15.5px;
-    line-height:1.45;color:var(--ink-2)
-  }
+  .mast-type{padding:22px 24px 28px;max-width:36rem}
+  .place{margin:0 0 10px;font-size:15px;color:var(--ink-soft);font-weight:500}
+  h1{font-size:clamp(2rem,8vw,3.4rem);line-height:.94;margin:0}
+  .role{margin:14px 0 0;font-size:clamp(1.02rem,2.4vw,1.22rem);line-height:1.45;color:var(--ink-2)}
   .avail{
-    display:inline-flex;align-items:center;gap:9px;margin:14px 0 0;
+    display:inline-flex;align-items:center;gap:9px;margin:16px 0 0;
     font-size:14px;color:var(--ink-2);font-weight:500
   }
-  .avail::before{
-    content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none
-  }
-  .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+  .avail::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
   .hero-cta a{
     display:inline-flex;align-items:center;text-decoration:none;font-size:15px;font-weight:500;
     padding:13px 20px;border:1px solid var(--ink);min-height:48px;
@@ -81,19 +76,7 @@
   .hero-cta a.primary:hover{background:var(--accent);border-color:var(--accent)}
   .hero-cta a.ghost:hover{border-color:var(--accent);color:var(--accent)}
   .hero-cta a:active{transform:scale(0.97)}
-
-  .id{margin:0}
-  .id img{
-    width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:center 18%;
-    display:block;border:0;max-height:42svh;
-    animation:photo-in 700ms var(--ease-out) both;
-  }
-  .mast-type{padding:18px 20px 22px}
-  @keyframes photo-in{
-    from{clip-path:inset(0 0 100% 0);opacity:.45}
-    to{clip-path:inset(0);opacity:1}
-  }
-  .id-meta{font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:14px 0 0}
+  .id-meta{font-size:14px;color:var(--ink-soft);line-height:1.55;margin:16px 0 0}
   .id-meta a{text-decoration:none;border-bottom:1px solid var(--rule);display:inline-block;min-height:44px;padding:11px 0}
   @media (hover:hover) and (pointer:fine){
     .id-meta a:hover{border-color:var(--accent);color:var(--accent)}
@@ -108,10 +91,7 @@
     gap:18px;align-items:baseline;width:100%;padding:16px 2px;cursor:pointer;min-height:48px;
     transition:transform 160ms var(--ease-out)
   }
-  /* all:unset kills the UA focus ring, so :focus-visible must restate it */
-  .ev-btn:focus-visible{
-    outline:3px solid var(--accent);outline-offset:2px;border-radius:2px
-  }
+  .ev-btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:2px}
   .ev-btn:active{transform:scale(0.985)}
   .num{font-size:clamp(2.1rem,9vw,3rem);line-height:1;letter-spacing:-.04em;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
   .ev-label{font-size:15px;line-height:1.4;color:var(--ink-2)}
@@ -187,44 +167,37 @@
     .cols{grid-template-columns:1fr 1fr;gap:calc(var(--sp)*5)}
     .ev-btn{grid-template-columns:150px 1fr auto;padding:22px 2px}
     .bcard{
-      grid-template-columns:240px minmax(0,1fr);
-      max-width:44rem;min-height:240px;align-items:stretch;
+      grid-template-columns:minmax(280px,42vw) minmax(0,1fr);
+      min-height:100svh;align-items:stretch;max-width:none;
     }
-    .id{min-height:100%;height:100%;overflow:hidden}
-    .id img{height:100%;max-height:none;aspect-ratio:auto}
+    .id{height:100svh;overflow:hidden}
+    .id img{height:100%;max-height:none;width:100%;object-fit:cover}
     .mast-type{
-      padding:22px 26px 24px;
-      border-inline-start:1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+      padding:8vh 6vw 8vh 4vw;
       display:flex;flex-direction:column;justify-content:center;
     }
+    .wrap.hero{max-width:none;padding:0}
   }
-  @media (min-width:960px){
-    .bcard{grid-template-columns:280px minmax(0,1fr);max-width:48rem}
-  }
-  #atm{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
-  .mast,main,.close,footer{position:relative;z-index:1}
   @media (prefers-reduced-motion:reduce){
     .id img{animation:none}
     .ev-body,.ev-sign,.hero-cta a,.cta a,.ev-btn{transition:none!important}
-    #atm{display:none}
   }
 </style>
 </head>
 <body>
-<canvas id="atm" aria-hidden="true"></canvas>
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="mast">
-  <div class="wrap">
+  <div class="wrap hero">
     <article class="bcard">
       <div class="id">
         <picture>
-          <source type="image/webp" srcset="img/natalia-640.webp?v=20260915b 640w, img/natalia.webp?v=20260915b 828w" sizes="(min-width:960px) 280px, (min-width:760px) 240px, min(100vw, 22.5rem)">
-          <img src="img/natalia.jpg?v=20260915b" srcset="img/natalia-640.jpg?v=20260915b 640w, img/natalia.jpg?v=20260915b 828w" sizes="(min-width:960px) 280px, (min-width:760px) 240px, min(100vw, 22.5rem)" alt="Natalia Koroleva" width="828" height="828" fetchpriority="high">
+          <source type="image/webp" srcset="img/natalia-640.webp?v=20260917a 640w, img/natalia.webp?v=20260917a 828w" sizes="(min-width:760px) 42vw, 100vw">
+          <img src="img/natalia.jpg?v=20260917a" srcset="img/natalia-640.jpg?v=20260917a 640w, img/natalia.jpg?v=20260917a 828w" sizes="(min-width:760px) 42vw, 100vw" alt="Natalia Koroleva" width="828" height="828" fetchpriority="high">
         </picture>
       </div>
       <div class="mast-type">
-        <p class="place">Helsinki · IT project manager</p>
+        <p class="place">Helsinki</p>
         <h1>Natalia Koroleva</h1>
         <p class="role">IT Project Manager. I build bridges: between cultures, between teams, and between the people who build the system and the people who depend on it.</p>
         <p class="avail">Available for work in Helsinki</p>
@@ -454,7 +427,7 @@
 <footer>
   <div class="wrap">
     <span>© Natalia Koroleva · Helsinki</span>
-    <span class="build-stamp" data-build="20260916-bcard">Updated 20260916-bcard UTC</span>
+    <span class="build-stamp" data-build="20260917-letter">Updated 20260917-letter UTC</span>
   </div>
 </footer>
 
@@ -462,10 +435,12 @@
 (function(){
   document.querySelectorAll('.ev').forEach(function(ev){
     var btn = ev.querySelector('.ev-btn');
+    var sign = ev.querySelector('.ev-sign');
     btn.addEventListener('click', function(){
       var open = ev.getAttribute('open-state') === '1';
       ev.setAttribute('open-state', open ? '0' : '1');
       btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      if (sign) sign.textContent = open ? '+' : '−';
     });
   });
 })();
@@ -498,9 +473,5 @@
   window.addEventListener('pageshow', function(e){ if (e.persisted) check(); });
 })();
 </script>
-<script type="importmap">
-{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}
-</script>
-<script type="module" src="js/atm.js"></script>
 </body>
 </html>
