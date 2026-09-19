@@ -45,7 +45,7 @@
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
   /* first screen is a print, not a widget on a shader */
-  .mast{padding:0}
+  .mast{padding:16px 0 28px}
   .bcard{
     display:grid;grid-template-columns:1fr;
     background:var(--paper-2);
@@ -173,18 +173,18 @@
     .ev-btn{grid-template-columns:150px 1fr auto;padding:22px 2px}
     .mast{
       min-height:100svh;display:flex;align-items:center;
-      padding:32px 24px;
+      padding:40px 24px;
     }
-    .wrap.hero{max-width:1080px;width:100%;padding:0}
+    .wrap.hero{max-width:800px;width:100%;padding:0}
     .bcard{
-      grid-template-columns:minmax(240px,360px) minmax(0,1fr);
-      max-width:1080px;max-height:min(640px,82svh);
+      grid-template-columns:280px minmax(0,1fr);
+      max-width:800px;max-height:none;
       min-height:0;align-items:stretch;
     }
-    .id{height:100%;max-height:min(640px,82svh);overflow:hidden}
-    .id img{height:100%;max-height:min(640px,82svh);width:100%;object-fit:cover}
+    .id{height:auto;max-height:none;overflow:hidden}
+    .id img{width:100%;height:auto;aspect-ratio:1;max-height:none;object-fit:cover}
     .mast-type{
-      padding:28px 32px;
+      padding:24px 28px;
       display:flex;flex-direction:column;justify-content:center;
     }
   }
@@ -202,8 +202,8 @@
     <article class="bcard">
       <div class="id">
         <picture>
-          <source type="image/webp" srcset="img/natalia-640.webp?v=20260919a 640w, img/natalia.webp?v=20260919a 828w" sizes="(min-width:760px) 360px, 100vw">
-          <img src="img/natalia.jpg?v=20260919a" srcset="img/natalia-640.jpg?v=20260919a 640w, img/natalia.jpg?v=20260919a 828w" sizes="(min-width:760px) 360px, 100vw" alt="Natalia Koroleva" width="828" height="828" fetchpriority="high">
+          <source type="image/webp" srcset="img/natalia-640.webp?v=20260919b 640w, img/natalia.webp?v=20260919b 828w" sizes="(min-width:760px) 280px, 100vw">
+          <img src="img/natalia.jpg?v=20260919b" srcset="img/natalia-640.jpg?v=20260919b 640w, img/natalia.jpg?v=20260919b 828w" sizes="(min-width:760px) 280px, 100vw" alt="Natalia Koroleva" width="828" height="828" fetchpriority="high">
         </picture>
       </div>
       <div class="mast-type">
@@ -437,7 +437,7 @@
 <footer>
   <div class="wrap">
     <span>© Natalia Koroleva · Helsinki</span>
-    <span class="build-stamp" data-build="20260919-tvbound">Updated 20260919-tvbound UTC</span>
+    <span class="build-stamp" data-build="20260919-desk">Updated 20260919-desk UTC</span>
   </div>
 </footer>
 
