@@ -46,7 +46,12 @@
 
   /* first screen is a print, not a widget on a shader */
   .mast{padding:0}
-  .bcard{display:grid;grid-template-columns:1fr}
+  .bcard{
+    display:grid;grid-template-columns:1fr;
+    background:var(--paper-2);
+    border:1px solid color-mix(in srgb, var(--ink) 16%, transparent);
+    overflow:hidden;
+  }
   .id{margin:0}
   .id img{
     width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:center 18%;
@@ -166,17 +171,22 @@
     .job-when{padding-top:4px}
     .cols{grid-template-columns:1fr 1fr;gap:calc(var(--sp)*5)}
     .ev-btn{grid-template-columns:150px 1fr auto;padding:22px 2px}
-    .bcard{
-      grid-template-columns:minmax(280px,42vw) minmax(0,1fr);
-      min-height:100svh;align-items:stretch;max-width:none;
+    .mast{
+      min-height:100svh;display:flex;align-items:center;
+      padding:32px 24px;
     }
-    .id{height:100svh;overflow:hidden}
-    .id img{height:100%;max-height:none;width:100%;object-fit:cover}
+    .wrap.hero{max-width:1080px;width:100%;padding:0}
+    .bcard{
+      grid-template-columns:minmax(240px,360px) minmax(0,1fr);
+      max-width:1080px;max-height:min(640px,82svh);
+      min-height:0;align-items:stretch;
+    }
+    .id{height:100%;max-height:min(640px,82svh);overflow:hidden}
+    .id img{height:100%;max-height:min(640px,82svh);width:100%;object-fit:cover}
     .mast-type{
-      padding:8vh 6vw 8vh 4vw;
+      padding:28px 32px;
       display:flex;flex-direction:column;justify-content:center;
     }
-    .wrap.hero{max-width:none;padding:0}
   }
   @media (prefers-reduced-motion:reduce){
     .id img{animation:none}
@@ -192,8 +202,8 @@
     <article class="bcard">
       <div class="id">
         <picture>
-          <source type="image/webp" srcset="img/natalia-640.webp?v=20260917a 640w, img/natalia.webp?v=20260917a 828w" sizes="(min-width:760px) 42vw, 100vw">
-          <img src="img/natalia.jpg?v=20260917a" srcset="img/natalia-640.jpg?v=20260917a 640w, img/natalia.jpg?v=20260917a 828w" sizes="(min-width:760px) 42vw, 100vw" alt="Natalia Koroleva" width="828" height="828" fetchpriority="high">
+          <source type="image/webp" srcset="img/natalia-640.webp?v=20260919a 640w, img/natalia.webp?v=20260919a 828w" sizes="(min-width:760px) 360px, 100vw">
+          <img src="img/natalia.jpg?v=20260919a" srcset="img/natalia-640.jpg?v=20260919a 640w, img/natalia.jpg?v=20260919a 828w" sizes="(min-width:760px) 360px, 100vw" alt="Natalia Koroleva" width="828" height="828" fetchpriority="high">
         </picture>
       </div>
       <div class="mast-type">
@@ -427,7 +437,7 @@
 <footer>
   <div class="wrap">
     <span>© Natalia Koroleva · Helsinki</span>
-    <span class="build-stamp" data-build="20260917-letter">Updated 20260917-letter UTC</span>
+    <span class="build-stamp" data-build="20260919-tvbound">Updated 20260919-tvbound UTC</span>
   </div>
 </footer>
 
