@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://koroleva.cv/sitemap.xml
